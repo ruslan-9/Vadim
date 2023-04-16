@@ -1,0 +1,89 @@
+1) Посмотреть где я 
+pwd
+2) Создать папку 
+mkdir homework
+
+3) Зайти в папку 
+cd homework
+
+4) Создать 3 папки 
+mkdir folder_1 folder_2 folder_3
+
+5) Зайти в любую папку 
+cd folder_1
+
+6) Создать 5 файлов (3 txt, 2 json) 
+touch 1.txt 2.txt 3.txt 1.json 2.json
+
+7) Создать 3 папки 
+mkdir Saint-Petersburg Moscow Novorossiysk
+
+8. Вывести список содержимого папки 
+ls -la
+
+9) + Открыть любой txt файл 
+cat 1.txt
+
+10) + написать туда что-нибудь, любой текст.  
+vim 1.txt
+i
+222
+
+11) + сохранить и выйти.
+ESCAPE - выйти из редактирования
+SHIFT+:
+:wq
+
+12) Выйти из папки на уровень выше 
+cd ..
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку
+mv folder_1/1.txt folder_1/1.json folder_2/
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+cp folder_1/2.txt folder_1/2.json folder_2
+
+15) Найти файл по имени
+find folder_2/1.txt
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+tail -f folder_2/1.txt | grep "2"
+открыть файл в проводнике через блокнот, дописать 2 в него и сохранить файл
+
+17) вывести несколько первых строк из текстового файла
+head -n 2 folder_2/1.txt
+
+18) вывести несколько последних строк из текстового файла
+tail -n 2 folder_2/1.txt
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+добавить в файл 1.txt длинный текст
+less folder_2/1.txt
+отобразится текст в утилите less. чтобы выйти из less нужно нажать q
+
+20) вывести дату и время
+date
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+
+curl http://162.55.220.72:5005/terminal-hw-request
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+вернуться к папке в шаге 1
+touch script.sh
+vim script.sh
+Содержимое скрипта:
+#!/bin/bash
+cd homework
+mkdir folder_1 folder_2 folder_3
+cd folder_1
+touch 1.txt 2.txt 3.txt 1.json 2.json
+mkdir Saint-Petersburg Moscow Novorossiysk
+ls -la
+mv 1.txt 1.json ../folder_2/
+
+chmod +x ./script.sh
+./script.sh
