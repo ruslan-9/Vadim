@@ -1,5 +1,6 @@
 1) Посмотреть где я 
 pwd
+
 2) Создать папку 
 mkdir homework
 
@@ -75,6 +76,7 @@ curl http://162.55.220.72:5005/terminal-hw-request
 вернуться к папке в шаге 1
 touch script.sh
 vim script.sh
+
 Содержимое скрипта:
 #!/bin/bash
 cd homework
